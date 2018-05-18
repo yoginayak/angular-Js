@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular</title>
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+	<script type="text/javascript" src="js/materialize.min.js">
+	</script>
+	<script type="text/javascript" src="js/Angular.js">
+	</script>
+	</head>
+<body>
+   <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Angular</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="angularstudent.html">Student Name</a></li>
+        <li><a href="angulartextbox.html">Textbox</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+      </ul>
+    </div>
+  </nav> 
+        <div class="container">
+        	<div class="col s3"></div>
+        	<div class="col s4">
+        	<h2>Student Name</h2>
+        		<div ng-app="mainApp" ng-controller="studentCtrl">
+        			<p>Enter the first name </p><input type="text" ng-model="student.firstname">
+        			<p>Enter the last name </p><input type="text" ng-model="student.lastname">
+        			<h3>Your name is :{{student.fullname()}}</h3>
+        		</div>
+        		<script type="text/javascript">
+        		angular.module("mainApp",[]).controller('studentCtrl',function($scope)
+        		{
+        			$scope.student={
+        				firstname:"yogi",
+        				lastname:"Nayak",
+        				fullname:function()
+        				{
+        					return $scope.student.firstname+" "+$scope.student.lastname;
+        				}
+        			};
+        		}
+        			);
+        		
+        		</script>
+        	</div>
+        </div>
+</body>
+</html>
